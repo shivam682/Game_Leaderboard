@@ -48,7 +48,7 @@ public class LeaderbodApplication implements CommandLineRunner {
 
 	private Set<Player> parseCsv(MultipartFile file) throws IOException {
 		try(Reader reader = new BufferedReader(new InputStreamReader(file.getInputStream()))) {
-			System.out.println(56);
+
 			HeaderColumnNameMappingStrategy<PlayerCsvRepresentation> strategy =
 					new HeaderColumnNameMappingStrategy<>();
 			strategy.setType(PlayerCsvRepresentation.class);
@@ -56,7 +56,7 @@ public class LeaderbodApplication implements CommandLineRunner {
 					new CsvToBeanBuilder<PlayerCsvRepresentation>(reader)
 							.withMappingStrategy(strategy)
 							.build();
-			System.out.println(56);
+
 			return csvToBean.parse()
 					.stream()
 					.map(csvLine -> Player.builder()
