@@ -3,21 +3,21 @@ package com.backlight.leaderbod.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.sql.Timestamp;
 import java.util.UUID;
 
+//Entity of PLayer to store in database
 @Entity
-@Data
+@Builder
 @Table(name="Player")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+
 public class Player {
     @Id
     @GeneratedValue(generator = "player_gen",strategy = GenerationType.AUTO)

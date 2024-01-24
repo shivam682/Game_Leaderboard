@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-
+//playload for player
 public class PlayerDto {
     private int uid;
     @NotBlank(message= "Name is required")
